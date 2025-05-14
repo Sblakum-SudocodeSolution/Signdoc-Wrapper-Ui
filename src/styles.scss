@@ -1,1 +1,111 @@
-/* You can add global styles to this file, and also import other style files */
+// @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --bg-violate: #a358ff;
+  --text-violate: #9747ff;
+  --bg-grey: #3f3f46;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("tff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+
+  a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--bg-violate);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-violate);
+}
+
+.form-text-input {
+  border: 0.5px solid var(--bg-violate);
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+
+  &:focus-visible {
+    outline-color: var(--bg-violate);
+  }
+}
+
+.btn-google {
+  background-color: var(--bg-grey);
+  color: #fff;
+  padding: 0.45rem 0.75rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.button {
+  color: white;
+  background-color: var(--bg-violate);
+  border-radius: 20px;
+  border: 0;
+  padding: 0.45rem 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--text-violate);
+  }
+}
+
+input[type="checkbox"] {
+  // outline: 1px solid var(--bg-violate);
+  border-radius: 0.25em;
+  float: left;
+  margin-left: -1.5em;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--bg-violate) !important;
+}
+
+.btn-login {
+  width: 30%;
+}
+
+.btn-signup {
+  width: 100%;
+}

@@ -1,0 +1,91 @@
+<section class="signup-container">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-md-6 signup-box-1">
+        <div class="signup-info-box h-100">
+          <img
+            src="../../../assets/images/sudo_white_logo.png"
+            alt="sudocode Logo"
+            width="210"
+            height="32"
+            loading="lazy"
+          />
+          <div>
+            <h2 class="m-0 tag-title">Sudo<span>Mark</span></h2>
+            <span class="tag-line">Your digital mark, verified</span>
+          </div>
+
+          <h2 class="tag-sub-title">Join the Paperless Revolution</h2>
+
+          <p class="m-0 tag-description">
+            Sign up and experience seamless digital <br />
+            signing.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 signup-box-2">
+        <div class="signup-box">
+          <form autocomplete="off">
+            <div class="text-center">
+              <span class="signup-form-title">New Here? Welcome!</span>
+              <p class="signup-form-description m-0 mt-2">
+                Join thousands of professionals using our secure e-signature
+                platform. Sign, send and manage documents with ease - all in one
+                place.
+              </p>
+            </div>
+            <div class="form-group mb-3">
+              <label for="name">First & LastName</label>
+              <input
+                type="text"
+                class="form-text-input"
+                id="name"
+                placeholder="Enter Name"
+                [(ngModel)]="signupObj.name"
+                name="name"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                class="form-text-input"
+                id="email"
+                placeholder="example@gmail.com"
+                [(ngModel)]="signupObj.email"
+                name="email"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-text-input"
+                id="password"
+                placeholder="********"
+                [(ngModel)]="signupObj.password"
+                name="password"
+              />
+            </div>
+            <div class="form-check" style="margin-bottom: 2rem">
+              <input
+                type="checkbox"
+                [(ngModel)]="signupObj.remember"
+                class="form-chk-input"
+                id="remember"
+                name="remember"
+              />
+              <label class="form-check-label" for="remember"
+                >I agree with the
+                <span class="form-check-span">Terms & Conditions</span> of
+                Sudocode
+              </label>
+            </div>
+            <button type="submit" class="button btn-signup mb-4">signup</button>
+            <button class="btn-google">Sign in with Google</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
