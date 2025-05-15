@@ -1,5 +1,7 @@
 // @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@use "./assets/sass/variables" as *;
+
 :root {
   --bg-violate: #a358ff;
   --text-violate: #9747ff;
@@ -88,7 +90,6 @@ body {
 }
 
 input[type="checkbox"] {
-  // outline: 1px solid var(--bg-violate);
   border-radius: 0.25em;
   float: left;
   margin-left: -1.5em;
@@ -96,6 +97,12 @@ input[type="checkbox"] {
   height: 1em;
   margin-top: 0.25em;
   vertical-align: top;
+  border-color: var(--text-violate);
+}
+
+input[type="checkbox"]:focus {
+  box-shadow: none;
+  border-color: var(--text-violate);
 }
 
 input[type="checkbox"]:checked {
@@ -104,8 +111,20 @@ input[type="checkbox"]:checked {
 
 .btn-login {
   width: 30%;
+
+  @include breakpoint(xs) {
+    width: 100%;
+  }
+
+  @include breakpoint(md) {
+    width: 100%;
+  }
 }
 
 .btn-signup {
   width: 100%;
+}
+
+.err-msg {
+  color: red;
 }

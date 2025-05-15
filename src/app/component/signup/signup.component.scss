@@ -1,24 +1,33 @@
+@use "../../../assets/sass/variables" as *;
+
 .signup-container {
   height: 100dvh;
-  // overflow: hidden;
 }
 
 .signup-box-1 {
   background-image: url("../../../assets/images/signup_bg_1.png");
   background-repeat: no-repeat;
-  // background-position: left top;
   background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  @include breakpoint(xs) {
+    height: 100%;
+  }
+
   .signup-info-box {
-    // border: 1px solid #fff;
     width: 85%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    @include breakpoint(xs) {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
 
     .tag-title {
       color: #fff;
@@ -65,11 +74,37 @@
   align-items: center;
 
   .signup-box {
-    padding: 3rem;
     border: 2px solid var(--bg-violate);
     border-radius: 20px;
-    width: 75%;
     margin: 3rem auto;
+
+    @include breakpoint(xs) {
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    @include breakpoint(sm) {
+      width: 90%;
+      padding: 3rem;
+    }
+
+    @include breakpoint(md) {
+      width: 95%;
+      padding: 1.5rem;
+    }
+
+    @include breakpoint(lg) {
+      width: 85%;
+      padding: 3rem;
+    }
+
+    @include breakpoint(xl) {
+      width: 75%;
+    }
+
+    @include breakpoint(xxl) {
+      width: 50%;
+    }
 
     .signup-form-title {
       font-size: 2.188rem;
@@ -98,9 +133,3 @@
     }
   }
 }
-
-// @media (min-width: 1600px){
-//   .signup-box{
-//     width: 50% !important;
-//   }
-// }

@@ -5,7 +5,7 @@
         <div class="login-info-box h-100">
           <img
             src="../../../assets/images/sudo_white_logo.png"
-            alt="sudocode Logo"
+            alt="Logo"
             width="210"
             height="32"
             loading="lazy"
@@ -29,7 +29,7 @@
       </div>
       <div class="col-md-6 login-box-2">
         <div class="login-box">
-          <form autocomplete="off">
+          <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
             <div class="text-center">
               <span class="login-form-title">Welcome back !</span>
               <p class="login-form-description m-0 mt-2">
@@ -37,7 +37,14 @@
                 anywhere. Your data is encrypted and protected with
                 industry-standard security.
               </p>
-              <button class="btn-google">Sign in with Google</button>
+              <button type="button" class="btn-google">
+                <img
+                  src="../../../assets/images/google_logo.svg"
+                  alt="logo"
+                  loading="lazy"
+                />
+                Sign in with Google
+              </button>
             </div>
             <div class="form-group mb-3">
               <label for="email">Email Address</label>
@@ -46,9 +53,16 @@
                 class="form-text-input"
                 id="email"
                 placeholder="example@gmail.com"
-                [(ngModel)]="loginObj.email"
+                formControlName="email"
                 name="email"
               />
+
+              @let email = loginFormControls['email']; @if (email.invalid &&
+              email.touched) { @if (email.hasError('pattern')) {
+              <small class="err-msg">Invalid email format</small>
+              }@else {
+              <small class="err-msg">Email is Required</small>
+              } }
             </div>
             <div class="form-group mb-3">
               <label for="password">Password</label>
@@ -57,30 +71,49 @@
                 class="form-text-input"
                 id="password"
                 placeholder="********"
-                [(ngModel)]="loginObj.password"
+                formControlName="password"
                 name="password"
               />
+              @let password = loginFormControls['password']; @if
+              (password.invalid && password.touched) { @if
+              (password.hasError('minlength')) {
+              <small class="err-msg"
+                >Password must be minimum 8 characters long</small
+              >
+              }@else if (password.hasError('maxlength')) {
+              <small class="err-msg"
+                >Password must be maximum 16 character long</small
+              >
+              }@else {
+              <small class="err-msg">Password is Required</small>
+              } }
             </div>
-            <div
-              class="d-flex justify-content-between"
-              style="margin-bottom: 2rem"
-            >
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  [(ngModel)]="loginObj.remember"
-                  class="form-chk-input"
-                  id="remember"
-                  name="remember"
-                />
-                <label class="form-check-label" for="remember"
-                  >Remember me</label
-                >
+            <div style="margin-bottom: 2rem">
+              <div class="d-flex justify-content-between">
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="remember"
+                    formControlName="remember"
+                    name="remember"
+                  />
+                  <label class="form-check-label" for="remember"
+                    >Remember me</label
+                  >
+                </div>
+
+                <div class="form-forgot-password">
+                  <a href="#" class="forgot-pass-link">Forgot password?</a>
+                </div>
               </div>
-              <div class="form-forgot-password">
-                <a href="#" class="forgot-pass-link">Forgot password?</a>
-              </div>
+              <!-- @let remember = loginFormControls['remember']; @if
+              (remember.invalid && remember.touched) { @if
+              (remember?.hasError('required')) {
+              <small class="err-msg">Required</small>
+              } } -->
             </div>
+
             <div class="mb-5">
               <button type="submit" class="button btn-login">Login</button>
             </div>
