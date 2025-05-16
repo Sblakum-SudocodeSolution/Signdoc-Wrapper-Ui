@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +17,7 @@ export class LoginComponent {
   loginForm!: FormGroup;
   submitted: boolean = false;
   private fb = inject(FormBuilder);
+  private router = inject(Router);
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -35,7 +36,7 @@ export class LoginComponent {
           Validators.maxLength(16),
         ]),
       ],
-      remember: [false, [Validators.requiredTrue]],
+      remember: [false],
     });
   }
 
@@ -48,7 +49,16 @@ export class LoginComponent {
       this.loginForm.markAllAsTouched();
       return;
     }
-    console.log(this.loginForm.value);
-    this.loginForm.reset();
+
+    const email = this.loginFormControls['email'].value;
+    const password = this.loginFormControls['password'].value;
+
+    if (email == 'admin@gamil.com' && password == '1234567890') {
+      this.router.navigate(['dashboard']);
+      console.log('admin LoggedIn success');
+      this.loginForm.reset();
+    } else {
+      alert('Invalid userName and Password');
+    }
   }
 }

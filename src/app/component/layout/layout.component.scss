@@ -1,0 +1,44 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 240px;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.main-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-button {
+  display: none;
+}
+
+.main-content {
+  padding: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidenav {
+    width: 200px;
+  }
+
+  .menu-button {
+    display: inline-flex;
+  }
+
+  mat-sidenav {
+    position: absolute;
+  }
+}

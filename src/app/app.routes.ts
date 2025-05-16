@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'login',
+  //   pathMatch: 'full',
+  // },
   {
     path: 'login',
     loadComponent: () =>
@@ -28,7 +28,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: () =>
+        loadComponent: () =>
           import('./pages/dashboard/dashboard.component').then(
             (c) => c.DashboardComponent
           ),
@@ -36,12 +36,20 @@ export const routes: Routes = [
       },
       {
         path: 'documents',
-        loadChildren: () =>
+        loadComponent: () =>
           import('./pages/documents/documents.component').then(
             (c) => c.DocumentsComponent
           ),
         title: 'Documents',
       },
     ],
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('../app/pages/page404/page404.component').then(
+        (c) => c.Page404Component
+      ),
   },
 ];

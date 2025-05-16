@@ -7,6 +7,8 @@
 //   "xxl": "min-width : 1401px",
 // );
 
+@use "sass:map";
+
 $breakpoints: (
   "xs": "max-width : 600px",
   "sm": "(min-width : 600px)",
@@ -17,7 +19,7 @@ $breakpoints: (
 );
 
 @mixin breakpoint($user-value) {
-  $my-map: map-get($breakpoints, $user-value);
+  $my-map: map.get($breakpoints, $user-value);
   @if $my-map {
     @media (#{$my-map}) {
       @content;
