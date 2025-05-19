@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'login',
-  //   pathMatch: 'full',
-  // },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
   {
     path: 'login',
     loadComponent: () =>
@@ -41,6 +41,14 @@ export const routes: Routes = [
             (c) => c.DocumentsComponent
           ),
         title: 'Documents',
+      },
+      {
+        path: 'template',
+        loadComponent: () =>
+          import('./pages/template/template.component').then(
+            (c) => c.TemplateComponent
+          ),
+        title: 'Template',
       },
     ],
   },
