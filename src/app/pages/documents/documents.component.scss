@@ -1,0 +1,76 @@
+.document-label {
+  color: #3f3f46;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.document-container {
+  border: 1px dashed #3f3f46;
+  border-radius: 10px;
+  text-align: center;
+  //   height: 100dvh;
+  padding: 3.5rem;
+
+  .doc-step-title {
+    color: #6e6e6e99;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .doc-steps {
+    flex-wrap: wrap;
+
+    .steps-card {
+      width: 8.813rem;
+
+      .image-container {
+        width: 4.75rem;
+        height: 5rem;
+        border: 1px dashed #d2d2d2;
+        border-radius: 10px;
+        display: grid;
+        place-content: center;
+        margin: auto;
+      }
+
+      .image-container2 {
+        height: 6.063rem;
+        width: 9.5rem;
+      }
+
+      .step-description {
+        text-transform: uppercase;
+        letter-spacing: 1.8%;
+
+        .title {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #808080;
+          line-height: 1rem;
+        }
+
+        .description {
+          font-size: 0.75rem;
+          color: #a7a7a7;
+          line-height: 1rem;
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      padding: 0.5rem 0;
+
+      img{
+        margin-right: 0.75rem;
+      }
+
+      &:hover {
+        background-color: #f6eeff;
+      }
+    }
+  }
+}

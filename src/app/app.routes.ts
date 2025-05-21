@@ -43,6 +43,14 @@ export const routes: Routes = [
         title: 'Documents',
       },
       {
+        path: 'add-documents',
+        loadComponent: () =>
+          import('./pages/add-documents/add-documents.component').then(
+            (c) => c.AddDocumentsComponent
+          ),
+        title: 'Add Documents',
+      },
+      {
         path: 'template',
         loadComponent: () =>
           import('./pages/template/template.component').then(

@@ -1,6 +1,6 @@
 // @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 @use "./variables" as *;
+@import "primeicons/primeicons.css";
 
 :root {
   --bg-violate: #a358ff;
@@ -92,6 +92,27 @@ body {
   }
 }
 
+.btn-package {
+  background-color: var(--bg-violate);
+  border: none;
+  border-radius: 7px;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--text-violate);
+  }
+
+  i {
+    font-size: 22px;
+  }
+}
+
 input[type="checkbox"] {
   border-radius: 0.25em;
   float: left;
@@ -130,4 +151,8 @@ input[type="checkbox"]:checked {
 
 .err-msg {
   color: red;
+}
+
+.p-dialog-header {
+  padding: 0 !important;
 }
