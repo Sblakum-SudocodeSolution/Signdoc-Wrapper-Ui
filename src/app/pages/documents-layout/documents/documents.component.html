@@ -1,0 +1,135 @@
+<div class="container py-4">
+  <!-- <span class="mb-3">0 Documents</span> -->
+  <label class="mb-2">0 Documents</label>
+  <div class="document-container text-center">
+    <div class="doc-step-title mb-5">Send your documents for signature</div>
+
+    <div
+      class="doc-steps d-flex justify-content-center align-items-center mb-5"
+    >
+      <div class="steps-card">
+        <div class="image-container">
+          <img
+            src="../../../assets/images/file-add.png"
+            height="45"
+            width="45"
+            alt="image"
+          />
+        </div>
+        <div class="step-description mt-3">
+          <span class="title">Add</span>
+          <p class="m-0 description">Upload or import your documents</p>
+        </div>
+      </div>
+
+      <img
+        src="../../../assets/images/Arrow.png"
+        class="ms-2 me-5"
+        width="50"
+        alt="arrow"
+      />
+
+      <div class="steps-card">
+        <div class="image-container image-container2">
+          <img
+            src="../../../assets/images/digital-signature.png"
+            height="63"
+            width="161"
+            alt="image"
+          />
+        </div>
+        <div class="step-description mt-3">
+          <span class="title">prepare</span>
+          <p class="m-0 description">aDD FIELDS YOU WANT FILLED OUT</p>
+        </div>
+      </div>
+
+      <img
+        src="../../../assets/images/Arrow.png"
+        class="ms-5 me-2"
+        width="50"
+        alt="arrow"
+      />
+
+      <div class="steps-card">
+        <div class="image-container">
+          <img
+            src="../../../assets/images/email-send.png"
+            height="45"
+            width="45"
+            alt="image"
+          />
+        </div>
+        <div class="step-description mt-3">
+          <span class="title">sEND</span>
+          <p class="m-0 description">sEND DOCUMENTS FOR SIGNING</p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="dropdown-popup text-start p-2"
+      [class.dropdown-popup-show]="isPopupShow"
+    >
+      <ul class="m-0">
+        <li (click)="redirectDocumentRoute()">
+          <img
+            src="../../../assets/images/Upload_icon.png"
+            height="25"
+            width="25"
+            alt="icon"
+          />
+          <span class="ms-2">Upload</span>
+        </li>
+        <li>
+          <img
+            src="../../../assets/images/Import_cloud_icon.png"
+            height="25"
+            width="25"
+            alt="icon"
+          />
+          <span class="ms-2">Import from cloud storage</span>
+        </li>
+        <li (click)="toggleUrlPopup()">
+          <img
+            src="../../../assets/images/URL_import_icon.png"
+            height="25"
+            width="25"
+            alt="icon"
+          />
+          <span class="ms-2">Import via URL</span>
+        </li>
+        <li>
+          <img
+            src="../../../assets/images/Create_doc_icon.png"
+            height="25"
+            width="25"
+            alt="icon"
+          />
+          <span class="ms-2">Create Document Group</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="upload-url-popup" [class.upload-url-popup-show]="isUrlShow">
+      <strong class="mb-3">Upload Document via URL</strong>
+      <span class="mb-3"
+        >Insert a URL to PDF, Doc File to upload it to sign</span
+      >
+      <input type="text" class="mb-4" placeholder="https://www.url.com" />
+
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-outline-secondary" (click)="toggleUrlPopup()">
+          Cancel
+        </button>
+        <button class="btn-package justify-content-center">Upload</button>
+      </div>
+    </div>
+
+    <div align="center">
+      <button class="btn-package" (click)="toggleMenuPopup()">
+        <i class="bi bi-send-fill me-2"></i>get started
+      </button>
+    </div>
+  </div>
+</div>

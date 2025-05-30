@@ -20,6 +20,12 @@ export const routes: Routes = [
   },
 
   {
+    path: 'plans',
+    loadComponent: () =>
+      import('./pages/plans/plans.component').then((c) => c.PlansComponent),
+  },
+
+  {
     path: '',
     loadComponent: () =>
       import('./component/layout/layout.component').then(
@@ -36,27 +42,18 @@ export const routes: Routes = [
       },
       {
         path: 'documents',
-        loadComponent: () =>
-          import('./pages/documents/documents.component').then(
-            (c) => c.DocumentsComponent
-          ),
-        title: 'Documents',
-      },
-      {
-        path: 'add-documents',
-        loadComponent: () =>
-          import('./pages/add-documents/add-documents.component').then(
-            (c) => c.AddDocumentsComponent
-          ),
-        title: 'Add Documents',
+        loadChildren: () => import('./pages/documents-layout/documents.routes'),
       },
       {
         path: 'template',
+        loadChildren: () => import('./pages/template-layout/template-routes'),
+      },
+      {
+        path: 'create-contact',
         loadComponent: () =>
-          import('./pages/template/template.component').then(
-            (c) => c.TemplateComponent
+          import('./pages/create-contact/create-contact.component').then(
+            (c) => c.CreateContactComponent
           ),
-        title: 'Template',
       },
     ],
   },

@@ -1,0 +1,116 @@
+.add-recipient-container {
+  background-image: url("../../../../assets/images/add_recipient_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .card {
+    .steps {
+      .step-card {
+        .step-outer-dot {
+          height: 1.5rem;
+          width: 1.5rem;
+          border-radius: 50%;
+          border: 1px solid #cbcbcc;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          justify-self: center;
+
+          .step-dot {
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            background-color: #cbcbcc;
+          }
+        }
+
+        .step-title {
+          color: #cbcbcc;
+          font-weight: 600;
+          font-size: 0.625rem;
+        }
+
+        .step-active {
+          .step-outer-dot {
+            border: 1px solid var(--bg-violate);
+
+            .step-dot {
+              background-color: var(--bg-violate);
+            }
+          }
+          .step-title {
+            color: var(--text-violate);
+          }
+        }
+      }
+    }
+
+    .recipient-form,
+    .package-form {
+      .form-group {
+        label {
+          display: block;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+          border-radius: 8px;
+          border: 1px solid #d0d5dd;
+          padding: 10px 15px;
+          box-sizing: border-box;
+          outline: none;
+          transition: 0.2s;
+          width: 50%;
+        }
+
+        textarea {
+          resize: none;
+          border-radius: 8px;
+          border: 1px solid #d0d5dd;
+          padding: 10px 15px;
+          box-sizing: border-box;
+          outline: none;
+          transition: 0.2s;
+          width: 50%;
+          height: 100px;
+        }
+
+        .select-order {
+          border-radius: 8px;
+          border: 1px solid #d0d5dd;
+          padding: 10px 15px;
+          box-sizing: border-box;
+          outline: none;
+          transition: 0.2s;
+          width: 50%;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        .select-order:focus {
+          border: 1px solid var(--bg-violate);
+        }
+      }
+    }
+
+    .p-accordionheader {
+      color: #737373;
+      transition: 0.3s;
+      font-size: 1rem;
+
+      &:hover {
+        color: var(--bg-violate) !important;
+      }
+    }
+
+    .p-accordionpanel-active > .p-accordionheader {
+      color: var(--text-violate) !important;
+    }
+
+    .model-msg {
+      color: red;
+    }
+  }
+}

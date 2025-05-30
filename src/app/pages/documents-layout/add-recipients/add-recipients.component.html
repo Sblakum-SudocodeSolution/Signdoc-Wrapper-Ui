@@ -1,0 +1,165 @@
+<div class="container add-recipient-container">
+  <div class="card flex justify-center p-3">
+    @let form = recipientForm()!;
+
+    <form
+      class="recipient-form"
+      [formGroup]="form"
+      (ngSubmit)="recipientSubmit()"
+      autocomplete="off"
+    >
+      <div class="steps d-flex justify-content-evenly mt-4 mb-5">
+        <div class="step-1 step-card">
+          <div [class.step-active]="isStepActive">
+            <div class="step-outer-dot">
+              <div class="step-dot"></div>
+            </div>
+            <span class="step-title">Add recipient</span>
+          </div>
+        </div>
+
+        <div class="step-2 step-card">
+          <div [class.step-active]="isStepActive">
+            <div class="step-outer-dot">
+              <div class="step-dot"></div>
+            </div>
+            <span class="step-title">Add package details</span>
+          </div>
+        </div>
+
+        <div class="step-3 step-card">
+          <div [class.step-active]="isStepActive">
+            <div class="step-outer-dot">
+              <div class="step-dot"></div>
+            </div>
+            <span class="step-title">Add email details</span>
+          </div>
+        </div>
+      </div>
+
+      <p-accordion>
+        <p-accordion-panel value="0" (click)="toggleStepActive()">
+          <p-accordion-header>Add recipient</p-accordion-header>
+          <p-accordion-content formGroupName="recipientDetails">
+            <div class="form-group mb-3">
+              <select formControlName="recipientOrder" class="select-order">
+                <option value="" disabled selected>Choose to customize</option>
+                <option value="order-1">Complete in custom order</option>
+                <option value="order-2">Complete one by one</option>
+                <option value="order-3">Complete in custom</option>
+                <option value="order-4">Send in bulk</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="recipientName">Name*</label>
+              <input
+                type="text"
+                placeholder="Your name"
+                id="recipientName"
+                formControlName="recipientName"
+              />
+              <div class="d-block">
+                @let recipientName = form.get('recipientDetails.recipientName');
+                @if (recipientName?.invalid && recipientName?.touched) {
+                <small class="err-msg">Name is required</small>
+                }
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="recipientEmail">Email*</label>
+              <input
+                type="email"
+                placeholder="example@gmail.com"
+                id="recipientEmail"
+                formControlName="recipientEmail"
+              />
+              <div class="d-block">
+                @let recipientEmail =
+                form.get('recipientDetails.recipientEmail'); @if
+                (recipientEmail?.invalid && recipientEmail?.touched) { @if
+                (recipientEmail?.hasError('pattern')) {
+                <small class="err-msg">Please enter valid email</small>
+                }@else {
+                <small class="err-msg">Email is required</small>
+                } }
+              </div>
+            </div>
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="1" (click)="toggleStepActive()">
+          <p-accordion-header>Package setting</p-accordion-header>
+          <p-accordion-content formGroupName="packageDetails">
+            <div class="form-group mb-3">
+              <label for="packageName">Name*</label>
+              <input
+                type="text"
+                placeholder="Package name"
+                id="packageName"
+                formControlName="packageName"
+              />
+              <div class="d-block">
+                @let packageName = form.get('packageDetails.packageName'); @if
+                (packageName?.invalid && packageName?.touched) {
+                <small class="err-msg">Name is required</small>
+                }
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="packageDescription">Description</label>
+              <textarea
+                id="packageDescription"
+                formControlName="packageDescription"
+              ></textarea>
+            </div>
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="2" (click)="toggleStepActive()">
+          <p-accordion-header>Email Notification setting</p-accordion-header>
+          <p-accordion-content formGroupName="emailNotificationDetails">
+            <div class="form-group mb-3">
+              <label for="emailSubject">Email subject*</label>
+              <input
+                type="text"
+                placeholder="Your subject"
+                id="emailSubject"
+                formControlName="emailSubject"
+              />
+              <div class="d-block">
+                @let emailSubject =
+                form.get('emailNotificationDetails.emailSubject'); @if
+                (emailSubject?.invalid && emailSubject?.touched) {
+                <small class="err-msg">Subject is required</small>
+                }
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="emailSubjectDescription">Description</label>
+              <textarea
+                formControlName="emailSubjectDescription"
+                id="emailSubjectDescription"
+              ></textarea>
+            </div>
+          </p-accordion-content>
+        </p-accordion-panel>
+      </p-accordion>
+
+      <div class="row my-5">
+        <div class="col d-flex justify-content-between">
+          <button class="btn btn-outline-secondary" (click)="backToDocument()">
+            <i class="bi bi-chevron-left"></i> Back
+          </button>
+
+          <button class="btn-package" type="submit">Create</button>
+        </div>
+      </div>
+    </form>
+
+    <p-dialog [modal]="true" [(visible)]="visible">
+      <strong class="model-msg">Please fill the all required field</strong>
+    </p-dialog>
+  </div>
+</div>

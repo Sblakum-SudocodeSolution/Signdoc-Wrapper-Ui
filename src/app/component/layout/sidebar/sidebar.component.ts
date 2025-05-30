@@ -38,13 +38,19 @@ export class SidebarComponent {
     {
       title: 'Contacts',
       label: 'Contacts',
-      link: 'contacts',
+      link: 'create-contact',
       routerLinkActive: 'activated-route',
       icon: 'bi bi-person',
     },
     {
       label: 'Team',
       link: 'team',
+      routerLinkActive: 'activated-route',
+      icon: 'bi bi-people',
+    },
+    {
+      label: 'Plans & Pricing',
+      link: 'plans',
       routerLinkActive: 'activated-route',
       icon: 'bi bi-people',
     },
