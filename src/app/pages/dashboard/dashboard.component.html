@@ -61,7 +61,7 @@
   <div class="row mt-5">
     <div class="col">
       <div class="card overflow-hidden">
-        <p-table [columns]="cols" [value]="todoList">
+        <!-- <p-table [columns]="cols" [value]="todoList">
           <ng-template #header let-columns>
             <tr>
               <th *ngFor="let col of columns">
@@ -76,7 +76,54 @@
               </td>
             </tr>
           </ng-template>
-        </p-table>
+        </p-table> -->
+        <div class="dash-table-container">
+          <div class="dash-table-popup" [class.show-dash-table-popup]="toggleTablePopup">
+            <ul>
+              <li>test-1</li>
+              <li>test-2</li>
+              <li>test-3</li>
+              <li>test-4</li>
+              <li>test-5</li>
+            </ul>
+          </div>
+          <p-table
+            class="dash-table"
+            [value]="todoList"
+            [(selection)]="selectedTodo"
+            dataKey="id"
+          >
+            <ng-template #header>
+              <tr>
+                <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+              </tr>
+            </ng-template>
+
+            <ng-template #body let-item>
+              <tr>
+                <td>
+                  <p-tableCheckbox [value]="item" />
+                </td>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.email }}</td>
+                <td>
+                  <button
+                    class="btn-dash-table"
+                    (click)="toggleTablePopupMenu(item.id)"
+                  >
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
       </div>
     </div>
   </div>

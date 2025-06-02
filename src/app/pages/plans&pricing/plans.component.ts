@@ -13,7 +13,16 @@ export class PlansComponent {
   private _router = inject(Router);
   checked: boolean = false;
 
+  ngOnInit() {
+    this.checkIconsColor();
+  }
+
   redirectToHome() {
     this._router.navigateByUrl('/dashboard');
+  }
+
+  checkIconsColor() {
+    const icon = document.getElementById('card-icons')?.children;
+    console.log(icon);
   }
 }

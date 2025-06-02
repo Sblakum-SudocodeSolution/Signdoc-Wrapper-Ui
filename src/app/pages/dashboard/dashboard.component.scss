@@ -20,4 +20,28 @@
       font-size: 26px;
     }
   }
+
+  .dash-table-container {
+    position: relative;
+    display: inline-block;
+
+    .btn-dash-table {
+      border: none;
+    }
+
+    .dash-table-popup {
+      // position: absolute;
+      background-color: lightgreen;
+      color: #71717a;
+      position: absolute;
+      display: none;
+      // right: 0;
+      // transform: translate(-50%, -50%);
+      z-index: 888;
+    }
+
+    .show-dash-table-popup {
+      display: block;
+    }
+  }
 }

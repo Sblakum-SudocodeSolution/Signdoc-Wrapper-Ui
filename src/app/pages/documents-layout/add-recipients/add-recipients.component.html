@@ -42,7 +42,7 @@
           <p-accordion-header>Add recipient</p-accordion-header>
           <p-accordion-content formGroupName="recipientDetails">
             <div class="form-group mb-3">
-              <select formControlName="recipientOrder" class="select-order">
+              <select formControlName="recipientOrder" class="recipient-select">
                 <option value="" disabled selected>Choose to customize</option>
                 <option value="order-1">Complete in custom order</option>
                 <option value="order-2">Complete one by one</option>
@@ -52,11 +52,12 @@
             </div>
 
             <div class="form-group mb-3">
-              <label for="recipientName">Name*</label>
+              <label for="recipientName" class="form-label">Name*</label>
               <input
                 type="text"
                 placeholder="Your name"
                 id="recipientName"
+                class="recipient-form-input"
                 formControlName="recipientName"
               />
               <div class="d-block">
@@ -68,11 +69,12 @@
             </div>
 
             <div class="form-group mb-3">
-              <label for="recipientEmail">Email*</label>
+              <label for="recipientEmail" class="form-label">Email*</label>
               <input
                 type="email"
                 placeholder="example@gmail.com"
                 id="recipientEmail"
+                class="recipient-form-input"
                 formControlName="recipientEmail"
               />
               <div class="d-block">
@@ -93,11 +95,12 @@
           <p-accordion-header>Package setting</p-accordion-header>
           <p-accordion-content formGroupName="packageDetails">
             <div class="form-group mb-3">
-              <label for="packageName">Name*</label>
+              <label for="packageName" class="form-label">Name*</label>
               <input
                 type="text"
                 placeholder="Package name"
                 id="packageName"
+                class="recipient-form-input"
                 formControlName="packageName"
               />
               <div class="d-block">
@@ -108,10 +111,13 @@
               </div>
             </div>
             <div class="form-group mb-3">
-              <label for="packageDescription">Description</label>
+              <label for="packageDescription" class="form-label"
+                >Description</label
+              >
               <textarea
                 id="packageDescription"
                 formControlName="packageDescription"
+                class="recipient-textarea"
               ></textarea>
             </div>
           </p-accordion-content>
@@ -121,11 +127,14 @@
           <p-accordion-header>Email Notification setting</p-accordion-header>
           <p-accordion-content formGroupName="emailNotificationDetails">
             <div class="form-group mb-3">
-              <label for="emailSubject">Email subject*</label>
+              <label for="emailSubject" class="form-label"
+                >Email subject*</label
+              >
               <input
                 type="text"
                 placeholder="Your subject"
                 id="emailSubject"
+                class="recipient-form-input"
                 formControlName="emailSubject"
               />
               <div class="d-block">
@@ -137,10 +146,13 @@
               </div>
             </div>
             <div class="form-group mb-3">
-              <label for="emailSubjectDescription">Description</label>
+              <label for="emailSubjectDescription" class="form-label"
+                >Description</label
+              >
               <textarea
                 formControlName="emailSubjectDescription"
                 id="emailSubjectDescription"
+                class="recipient-textarea"
               ></textarea>
             </div>
           </p-accordion-content>
@@ -159,7 +171,7 @@
     </form>
 
     <p-dialog [modal]="true" [(visible)]="visible">
-      <strong class="model-msg">Please fill the all required field</strong>
+      <strong class="err-msg">Please fill the all required fields</strong>
     </p-dialog>
   </div>
 </div>

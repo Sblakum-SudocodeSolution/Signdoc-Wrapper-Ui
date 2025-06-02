@@ -63,13 +63,13 @@
     border: none;
     cursor: pointer;
     padding: 0.25rem 0.5rem;
-    background-color: #fff;
+    background-color: var(--text-white);
     border: 2px solid #a358ff;
   }
 
   .dropdown-popup {
     position: absolute;
-    background-color: #fff;
+    background-color: var(--text-white);
     border: 1px solid #f2f4f7;
     border-radius: 8px;
     top: 50%;
@@ -95,7 +95,7 @@
 
   .upload-url-popup {
     position: absolute;
-    background-color: #fff;
+    background-color: var(--text-white);
     border: 1px solid #f2f4f7;
     border-radius: 8px;
     top: 50%;

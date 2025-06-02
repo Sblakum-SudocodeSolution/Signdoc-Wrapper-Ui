@@ -1,0 +1,83 @@
+.button {
+  background-color: var(--bg-violate);
+  color: var(--text-white);
+  border: 0;
+  border-radius: 20px;
+  padding: 0.45rem 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--text-violate);
+  }
+}
+
+.btn-home {
+  text-decoration: none;
+  color: var(--text-white);
+  padding: 0.75rem 1.5rem;
+
+  i {
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: var(--text-white);
+  }
+}
+
+.btn-google {
+  background-color: var(--bg-grey);
+  color: var(--text-white);
+  padding: 0.45rem 0.75rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.btn-package {
+  background-color: var(--bg-violate);
+  color: var(--text-white);
+  border: 0;
+  border-radius: 7px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--text-violate);
+  }
+
+  i {
+    font-size: 20px;
+  }
+}
+
+.btn-buy-plan {
+  border: 1px solid var(--bg-violate);
+  padding: 10px;
+  border-radius: 4px;
+  color: var(--bg-violate);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn-login {
+  width: 30%;
+
+  @include breakpoint(xs) {
+    width: 100%;
+  }
+
+  @include breakpoint(md) {
+    width: 100%;
+  }
+}
+
+.btn-signup {
+  width: 100%;
+}

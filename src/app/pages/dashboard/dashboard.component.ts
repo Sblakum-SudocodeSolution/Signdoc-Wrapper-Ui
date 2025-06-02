@@ -8,9 +8,11 @@ import { InputIcon } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { Router } from '@angular/router';
 
-interface Column {
-  field: string;
-  header: string;
+interface todos {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
 }
 
 @Component({
@@ -27,20 +29,28 @@ interface Column {
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-  private productService = inject(ProductService);
   todoList: any[] = [];
-  cols!: Column[];
+  selectedTodo!: todos;
+  toggleTablePopup: boolean = false;
+  // cols!: Column[];
 
+  private productService = inject(ProductService);
   private router = inject(Router);
 
   ngOnInit() {
     this.getProduct();
 
-    this.cols = [
-      { field: 'id', header: 'Id' },
-      { field: 'name', header: 'Name' },
-      { field: 'email', header: 'Email' },
-    ];
+    // this.cols = [
+    //   { field: 'id', header: 'Id' },
+    //   { field: 'name', header: 'Name' },
+    //   { field: 'email', header: 'Email' },
+    // ];
+  }
+
+  toggleTablePopupMenu(id: number) {
+    // if (id) {
+    //   this.toggleTablePopup = !this.toggleTablePopup;
+    // }
   }
 
   getProduct() {

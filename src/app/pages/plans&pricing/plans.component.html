@@ -1,7 +1,7 @@
 <div class="pricing-back-arr" (click)="redirectToHome()">
   <i class="bi bi-chevron-left back-arr"></i>
 </div>
-<div class="container my-5 pricing-container">
+<div class="container mt-4 mb-5 pricing-container">
   <div class="pricing-header text-center">
     <strong class="heading"
       >Choose the Plan That <span>Fits You Best</span></strong
@@ -35,14 +35,85 @@
     </div>
   </div>
   <div class="row pricing-cards">
-    <div class="col-lg-3 col-md-6">
-      <div class="card pricing-card">
+    <div class="col-lg-3 col-md-6 pricing-card">
+      <div class="card">
         <span class="title">Starter Plan</span>
-        <p class="card-tag m-0">
+        <p class="card-tag m-0 mt-2">
           For individuals or freelancers just getting started.
         </p>
 
-        <strong class="plans-price">$05 <span>/ Month</span></strong>
+        <strong class="plans-price my-3">$05 <span>/ Month</span></strong>
+        <button class="btn-buy-plan">Get Started Now</button>
+
+        <div class="plan-description">
+          <ul id="card-icons">
+            <li>
+              <i class="bi bi-check-circle" id="card-icon"></i> 2 Users access
+            </li>
+            <li>
+              <i class="bi bi-check-circle" id="card-icon"></i>
+              Limited Templates
+            </li>
+            <li><i class="bi bi-x-circle" id="card-icon"></i> Send in bulk</li>
+            <li><i class="bi bi-x-circle" id="card-icon"></i> API access</li>
+            <li>
+              <i class="bi bi-x-circle" id="card-icon"></i> Mobile App access
+            </li>
+            <li>
+              <i class="bi bi-x-circle" id="card-icon"></i> In-person signatures
+            </li>
+            <li>
+              <i class="bi bi-x-circle" id="card-icon"></i> Set reminders &
+              notifications
+            </li>
+            <li>
+              <i class="bi bi-x-circle" id="card-icon"></i> Document groups
+            </li>
+            <li>
+              <i class="bi bi-x-circle" id="card-icon"></i> Cloud storage
+              integration
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 pricing-card">
+      <div class="card">
+        <span class="title">Pro Plan</span>
+        <p class="card-tag m-0 mt-2">
+          Ideal for small teams or growing businesses.
+        </p>
+
+        <strong class="plans-price my-3">$10 <span>/ Month</span></strong>
+        <button class="btn-buy-plan">Get Started Now</button>
+
+        <div class="plan-description">
+          <ul>
+            <li><i class="bi bi-check-circle card-icon"></i> 5 User access</li>
+            <li><i class="bi bi-check-circle"></i> 50 Templates</li>
+            <li><i class="bi bi-x-circle"></i> Send in bulk</li>
+            <li><i class="bi bi-x-circle"></i> API access</li>
+            <li><i class="bi bi-x-circle"></i> Mobile App access</li>
+            <li><i class="bi bi-x-circle"></i> In-person signatures</li>
+            <li>
+              <i class="bi bi-x-circle"></i> Set reminders & notifications
+            </li>
+            <li><i class="bi bi-x-circle"></i> Document groups</li>
+            <li><i class="bi bi-x-circle"></i> Cloud storage integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 pricing-card">
+      <div class="card">
+        <span class="title">Business Plan</span>
+        <p class="card-tag m-0 mt-2">
+          Designed for companies needing advanced controls
+        </p>
+
+        <strong class="plans-price my-3">$20 <span>/ Month</span></strong>
         <button class="btn-buy-plan">Get Started Now</button>
 
         <div class="plan-description">
@@ -63,70 +134,14 @@
       </div>
     </div>
 
-    <div class="col-lg-3 col-md-6">
-      <div class="card pricing-card">
-        <span class="title">Starter Plan</span>
-        <p class="card-tag m-0">
-          For individuals or freelancers just getting started.
+    <div class="col-lg-3 col-md-6 pricing-card">
+      <div class="card">
+        <span class="title">Enterprise Plan</span>
+        <p class="card-tag m-0 mt-2">
+          Tailored solutions for large organizations.
         </p>
 
-        <strong class="plans-price">$05 <span>/ Month</span></strong>
-        <button class="btn-buy-plan">Get Started Now</button>
-
-        <div class="plan-description">
-          <ul>
-            <li><i class="bi bi-check-circle card-icon"></i> 2 Users access</li>
-            <li><i class="bi bi-check-circle"></i> Limited Templates</li>
-            <li><i class="bi bi-x-circle"></i> Send in bulk</li>
-            <li><i class="bi bi-x-circle"></i> API access</li>
-            <li><i class="bi bi-x-circle"></i> Mobile App access</li>
-            <li><i class="bi bi-x-circle"></i> In-person signatures</li>
-            <li>
-              <i class="bi bi-x-circle"></i> Set reminders & notifications
-            </li>
-            <li><i class="bi bi-x-circle"></i> Document groups</li>
-            <li><i class="bi bi-x-circle"></i> Cloud storage integration</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6">
-      <div class="card pricing-card">
-        <span class="title">Starter Plan</span>
-        <p class="card-tag m-0">
-          For individuals or freelancers just getting started.
-        </p>
-
-        <strong class="plans-price">$05 <span>/ Month</span></strong>
-        <button class="btn-buy-plan">Get Started Now</button>
-
-        <div class="plan-description">
-          <ul>
-            <li><i class="bi bi-check-circle card-icon"></i> 2 Users access</li>
-            <li><i class="bi bi-check-circle"></i> Limited Templates</li>
-            <li><i class="bi bi-x-circle"></i> Send in bulk</li>
-            <li><i class="bi bi-x-circle"></i> API access</li>
-            <li><i class="bi bi-x-circle"></i> Mobile App access</li>
-            <li><i class="bi bi-x-circle"></i> In-person signatures</li>
-            <li>
-              <i class="bi bi-x-circle"></i> Set reminders & notifications
-            </li>
-            <li><i class="bi bi-x-circle"></i> Document groups</li>
-            <li><i class="bi bi-x-circle"></i> Cloud storage integration</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6">
-      <div class="card pricing-card">
-        <span class="title">Starter Plan</span>
-        <p class="card-tag m-0">
-          For individuals or freelancers just getting started.
-        </p>
-
-        <strong class="plans-price">$05 <span>/ Month</span></strong>
+        <strong class="plans-price my-3">$50 <span>/ Month</span></strong>
         <button class="btn-buy-plan">Get Started Now</button>
 
         <div class="plan-description">

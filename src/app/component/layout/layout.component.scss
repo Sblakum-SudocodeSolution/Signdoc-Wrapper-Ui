@@ -26,5 +26,11 @@
     #contentContainer {
       margin-left: 0;
     }
+
+    @media (max-width: 768px) {
+      #contentContainer {
+        margin-left: -300px;
+      }
+    }
   }
 }

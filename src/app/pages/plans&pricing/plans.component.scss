@@ -1,0 +1,132 @@
+@use "../../../assets/sass/variables" as *;
+
+.pricing-back-arr {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--text-violate);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 2rem;
+
+  .back-arr {
+    font-size: 1rem;
+    color: var(--text-violate);
+  }
+}
+
+.pricing-container {
+  .pricing-header {
+    .heading {
+      color: #000;
+      font-size: 3.125rem;
+      font-weight: 700;
+      line-height: 65px;
+
+      span {
+        display: block;
+        color: var(--text-violate);
+      }
+    }
+
+    .pricing-tag {
+      color: var(--text-light-black);
+      font-size: 1.375rem;
+    }
+
+    .time-label {
+      color: var(--text-light-black);
+    }
+
+    .discount-arr-container {
+      .discount-pr {
+        color: var(--text-violate);
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .pricing-card {
+    .card {
+      padding: 2rem 1rem;
+      transition: all 0.5s ease;
+      height: 100%;
+
+      .title {
+        font-size: 1.375rem;
+        font-weight: 700;
+        color: var(--text-light-black);
+      }
+
+      .card-tag {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--text-light-grey);
+      }
+
+      .plans-price {
+        font-size: 3.5rem;
+        font-weight: 600;
+        color: var(--text-light-black);
+
+        span {
+          color: #4b5768;
+          font-weight: 300;
+          font-size: 1rem;
+        }
+      }
+
+      .plan-description {
+        margin-top: 2.5rem;
+
+        ul {
+          li {
+            margin-bottom: 1rem;
+
+            i {
+              font-size: 22px;
+              color: #a358ff80;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    @include breakpoint(xs) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .pricing-card {
+    .card:hover {
+      background-color: var(--bg-violate);
+      color: var(--text-white);
+
+      .plans-price,
+      .card-tag,
+      .title,
+      .plan-description {
+        transition: all 0.5s ease;
+        color: var(--text-white);
+
+        span {
+          color: var(--text-white);
+          transition: all 0.5s ease;
+        }
+
+        ul {
+          li {
+            i {
+              color: var(--text-white);
+              transition: all 0.5s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}

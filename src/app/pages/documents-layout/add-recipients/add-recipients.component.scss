@@ -46,55 +46,6 @@
       }
     }
 
-    .recipient-form,
-    .package-form {
-      .form-group {
-        label {
-          display: block;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-          border-radius: 8px;
-          border: 1px solid #d0d5dd;
-          padding: 10px 15px;
-          box-sizing: border-box;
-          outline: none;
-          transition: 0.2s;
-          width: 50%;
-        }
-
-        textarea {
-          resize: none;
-          border-radius: 8px;
-          border: 1px solid #d0d5dd;
-          padding: 10px 15px;
-          box-sizing: border-box;
-          outline: none;
-          transition: 0.2s;
-          width: 50%;
-          height: 100px;
-        }
-
-        .select-order {
-          border-radius: 8px;
-          border: 1px solid #d0d5dd;
-          padding: 10px 15px;
-          box-sizing: border-box;
-          outline: none;
-          transition: 0.2s;
-          width: 50%;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus,
-        .select-order:focus {
-          border: 1px solid var(--bg-violate);
-        }
-      }
-    }
-
     .p-accordionheader {
       color: #737373;
       transition: 0.3s;
@@ -107,10 +58,6 @@
 
     .p-accordionpanel-active > .p-accordionheader {
       color: var(--text-violate) !important;
-    }
-
-    .model-msg {
-      color: red;
     }
   }
 }

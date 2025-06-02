@@ -30,7 +30,7 @@
     }
 
     .tag-title {
-      color: #fff;
+      color: var(--text-white);
       font-size: 3.75rem;
       line-height: 55px;
       font-weight: 700;
@@ -41,13 +41,13 @@
     }
 
     .tag-line {
-      color: #fff;
+      color: var(--text-white);
       letter-spacing: 2px;
       font-size: 1.25rem;
     }
 
     .tag-sub-title {
-      color: #fff;
+      color: var(--text-white);
       font-weight: 800;
       font-size: 3.125rem;
 
@@ -57,7 +57,7 @@
     }
 
     .tag-description {
-      color: #fff;
+      color: var(--text-white);
       font-size: 1.25rem;
       line-height: 30px;
     }

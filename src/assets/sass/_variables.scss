@@ -9,6 +9,15 @@
 
 @use "sass:map";
 
+:root {
+  --bg-violate: #a358ff;
+  --bg-grey: #3f3f46;
+  --text-violate: #9747ff;
+  --text-light-grey: #64748b;
+  --text-light-black: #191d23;
+  --text-white: #fff;
+}
+
 $breakpoints: (
   "xs": "max-width : 600px",
   "sm": "(min-width : 600px)",
