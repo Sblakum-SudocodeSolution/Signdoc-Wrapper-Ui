@@ -1,134 +1,21 @@
 @use "../../../assets/sass/variables" as *;
 
 .signup-container {
-  height: 100dvh;
-}
-
-.signup-box-1 {
-  background-image: url("../../../assets/images/signup_bg_1.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @include breakpoint(xs) {
-    height: 100%;
+  .box-1 {
+    background-image: url("../../../assets/images/signup_bg_1.png");
   }
 
-  .signup-info-box {
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  .box-2 {
+    background-image: url("../../../assets/images/signup_bg_2.png");
 
-    @include breakpoint(xs) {
-      width: 100%;
-      align-items: center;
-      text-align: center;
-    }
+    .form-box {
+      .form-description {
+        margin-bottom: 2rem !important;
+      }
 
-    .tag-title {
-      color: var(--text-white);
-      font-size: 3.75rem;
-      line-height: 55px;
-      font-weight: 700;
-
-      span {
+      .form-check-span {
         color: var(--text-violate);
       }
-    }
-
-    .tag-line {
-      color: var(--text-white);
-      letter-spacing: 2px;
-      font-size: 1.25rem;
-    }
-
-    .tag-sub-title {
-      color: var(--text-white);
-      font-weight: 800;
-      font-size: 3.125rem;
-
-      span {
-        color: var(--text-violate);
-      }
-    }
-
-    .tag-description {
-      color: var(--text-white);
-      font-size: 1.25rem;
-      line-height: 30px;
-    }
-  }
-}
-
-.signup-box-2 {
-  background-image: url("../../../assets/images/signup_bg_2.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .signup-box {
-    border: 2px solid var(--bg-violate);
-    border-radius: 20px;
-    margin: 3rem auto;
-
-    @include breakpoint(xs) {
-      width: 100%;
-      padding: 1.5rem;
-    }
-
-    @include breakpoint(sm) {
-      width: 90%;
-      padding: 3rem;
-    }
-
-    @include breakpoint(md) {
-      width: 95%;
-      padding: 1.5rem;
-    }
-
-    @include breakpoint(lg) {
-      width: 85%;
-      padding: 3rem;
-    }
-
-    @include breakpoint(xl) {
-      width: 75%;
-    }
-
-    @include breakpoint(xxl) {
-      width: 50%;
-    }
-
-    .signup-form-title {
-      font-size: 2.188rem;
-      letter-spacing: 1px;
-      font-weight: 700;
-      color: var(--text-violate);
-    }
-
-    .signup-form-description {
-      text-align: justify;
-      color: #747474;
-      margin-bottom: 2rem !important;
-    }
-
-    .forgot-pass-link {
-      color: var(--text-violate);
-
-      &:hover {
-        color: var(--bg-violate);
-      }
-    }
-
-    .form-check-span {
-      color: var(--text-violate);
     }
   }
 }

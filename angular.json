@@ -29,13 +29,15 @@
                 "input": "public"
               },
               "src/assets",
-              "src/assets/images"
+              "src/assets/images",
+              "src/assets/sass"
             ],
             "styles": [
-              "src/assets/sass/styles.scss",
+              "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "./node_modules/admin-lte/dist/css/adminlte.css"
+              "./node_modules/admin-lte/dist/css/adminlte.css",
+              "./node_modules/primeicons/primeicons.css"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
@@ -93,7 +95,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/assets/sass/styles.scss"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }

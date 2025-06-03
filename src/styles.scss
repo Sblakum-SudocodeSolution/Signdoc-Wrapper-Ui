@@ -1,8 +1,4 @@
-@use "./variables" as *;
-@import "primeicons/primeicons.css";
-@import "./fonts.scss";
-@import "./buttons.scss";
-@import "./inputs.scss";
+@use "assets/sass/imports.scss";
 
 * {
   margin: 0;
@@ -37,7 +33,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: var(--text-white);
 }
 
 /* Handle */
@@ -55,7 +51,7 @@ body {
 //  SCROLL-BAR-END  //
 
 .err-msg {
-  color: red;
+  color: var(--text-error);
 }
 
 .p-dialog-header {
