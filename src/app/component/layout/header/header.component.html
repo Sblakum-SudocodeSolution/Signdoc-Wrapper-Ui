@@ -1,8 +1,14 @@
-<div id="header">
-  <div class="logo">
-    <i class="bi bi-list" (click)="toggleSidebar.emit()"></i>
-  </div>
-  <div class="profile">
-    <strong>profile</strong>
-  </div>
-</div>
+<mat-toolbar id="header">
+  <button matIconButton class="btn-toggle" (click)="sidebarToggleBtn()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button matIconButton class="btn-profile" [matMenuTriggerFor]="menu">
+    <i class="bi bi-person-circle"></i>
+  </button>
+
+  <mat-menu class="profile-menu" #menu="matMenu">
+    <button mat-menu-item>Setting</button>
+    <button mat-menu-item (click)="logOut()">Logout</button>
+  </mat-menu>
+</mat-toolbar>

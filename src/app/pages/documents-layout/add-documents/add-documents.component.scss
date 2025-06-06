@@ -1,8 +1,8 @@
-.add-doc-container {
+@use "../../../../assets/sass/variables" as *;
+
+.add-doc-box {
   border: 1px dashed #3f3f46;
   border-radius: 10px;
-  text-align: center;
-  padding: 3.5rem;
 
   .add-document-title {
     color: var(--text-light-black);
@@ -25,7 +25,7 @@
   .file-upload-menu {
     display: none;
     position: absolute;
-    min-width: 10rem;
+    min-width: 13rem;
     overflow: auto;
     z-index: 1;
     background-color: var(--text-white);
@@ -33,8 +33,12 @@
     border: 1px solid #f2f4f7;
     border-radius: 10px;
 
+    @include breakpoint(xs) {
+      left: -50px;
+    }
+
     .file-upload-list {
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
       transition: all 0.3s ease;
 
       &:hover {

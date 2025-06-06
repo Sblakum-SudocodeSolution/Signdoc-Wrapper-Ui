@@ -1,11 +1,14 @@
-<div class="container py-4">
-  <!-- <span class="mb-3">0 Documents</span> -->
+<div class="container h-100 mt-4 mb-5">
   <label class="mb-2">0 Documents</label>
-  <div class="document-container text-center">
-    <div class="doc-step-title mb-5">Send your documents for signature</div>
+  <div
+    class="document-box text-center h-100 d-flex flex-column align-items-center justify-content-center"
+  >
+    <div class="box-title mb-5">
+      <strong class="doc-step-title">Send your documents for signature</strong>
+    </div>
 
     <div
-      class="doc-steps d-flex justify-content-center align-items-center mb-5"
+      class="box-steps d-flex justify-content-center align-items-center mb-5"
     >
       <div class="steps-card">
         <div class="image-container">
@@ -21,7 +24,6 @@
           <p class="m-0 description">Upload or import your documents</p>
         </div>
       </div>
-
       <img
         src="../../../assets/images/Arrow.png"
         class="ms-2 me-5"
@@ -126,8 +128,8 @@
       </div>
     </div>
 
-    <div align="center">
-      <button class="btn-package" (click)="toggleMenuPopup()">
+    <div class="box-buttons" align="center">
+      <button class="btn-package px-5" (click)="toggleMenuPopup()">
         <i class="bi bi-send-fill me-2"></i>get started
       </button>
     </div>

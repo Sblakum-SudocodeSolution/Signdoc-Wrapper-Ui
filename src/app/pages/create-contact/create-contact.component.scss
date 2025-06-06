@@ -1,20 +1,37 @@
-.create-contact-container {
+// .create-contact-container {
+//   .contact-box {
+//     margin: auto;
+//     width: 50%;
+//   }
+//   .contact-heading {
+//     display: block;
+//     color: #8b8b8b;
+//     font-weight: 600;
+//     font-size: 1rem;
+//   }
 
+//   .contact-description {
+//     font-size: 0.75rem;
+//     font-weight: 300;
+//     color: #acacac;
+//     letter-spacing: 0.5px;
+//   }
+// }
+
+.contact-container {
   .contact-box {
-    margin: auto;
-    width: 50%;
-  }
-  .contact-heading {
-    display: block;
-    color: #8b8b8b;
-    font-weight: 600;
-    font-size: 1rem;
-  }
+    .contact-heading {
+      display: block;
+      color: #8b8b8b;
+      font-weight: 600;
+      font-size: 1rem;
+    }
 
-  .contact-description {
-    font-size: 0.75rem;
-    font-weight: 300;
-    color: #acacac;
-    letter-spacing: 0.5px;
+    .contact-description {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: #acacac;
+      letter-spacing: 0.5px;
+    }
   }
 }

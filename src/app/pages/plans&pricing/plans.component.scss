@@ -5,11 +5,11 @@
   width: 1.5rem;
   border-radius: 50%;
   border: 1px solid var(--text-violate);
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem 2rem;
+  cursor: pointer;
 
   .back-arr {
     font-size: 1rem;
@@ -56,7 +56,7 @@
       height: 100%;
 
       .title {
-        font-size: 1.375rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: var(--text-light-black);
       }
@@ -71,7 +71,6 @@
         font-size: 3.5rem;
         font-weight: 600;
         color: var(--text-light-black);
-
         span {
           color: #4b5768;
           font-weight: 300;
@@ -97,6 +96,14 @@
     }
 
     @include breakpoint(xs) {
+      margin-top: 1.5rem;
+    }
+
+    @include breakpoint(sm) {
+      margin-top: 1.5rem;
+    }
+
+    @include breakpoint(md) {
       margin-top: 1.5rem;
     }
   }

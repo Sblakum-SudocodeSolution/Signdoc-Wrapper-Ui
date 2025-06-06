@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .button {
   background-color: var(--bg-violate);
   color: var(--text-white);
@@ -57,8 +59,20 @@
   }
 }
 
+.btn-profile {
+  background-color: white;
+  border: none;
+  transition: 0.3s ease;
+  color: var(--bg-grey);
+
+  &:hover {
+    color: var(--text-violate);
+  }
+}
+
 .btn-buy-plan {
   border: 1px solid var(--bg-violate);
+  background: var(--bg-white);
   padding: 10px;
   border-radius: 4px;
   color: var(--bg-violate);

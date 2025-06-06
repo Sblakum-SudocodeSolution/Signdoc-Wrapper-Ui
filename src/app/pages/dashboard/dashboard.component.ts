@@ -32,32 +32,19 @@ export class DashboardComponent {
   todoList: any[] = [];
   selectedTodo!: todos;
   toggleTablePopup: boolean = false;
-  // cols!: Column[];
+  isTableMenu: boolean = false;
 
   private productService = inject(ProductService);
   private router = inject(Router);
 
   ngOnInit() {
     this.getProduct();
-
-    // this.cols = [
-    //   { field: 'id', header: 'Id' },
-    //   { field: 'name', header: 'Name' },
-    //   { field: 'email', header: 'Email' },
-    // ];
-  }
-
-  toggleTablePopupMenu(id: number) {
-    // if (id) {
-    //   this.toggleTablePopup = !this.toggleTablePopup;
-    // }
   }
 
   getProduct() {
     this.productService.fetchProducts().subscribe({
       next: (res: any) => {
         this.todoList = res;
-        console.log(this.todoList);
       },
       error: (err) => {
         console.log(err);
@@ -67,5 +54,46 @@ export class DashboardComponent {
 
   createPackage() {
     this.router.navigateByUrl('documents');
+  }
+
+  products: any[] = [
+    {
+      packageTitle: 'Sample Package 1',
+      status: 'In Progress',
+      createdBy: 'Leigh Dickinson',
+      createdOn: 'Apr 18, 2025',
+    },
+    {
+      packageTitle: 'Sample Package 2',
+      status: 'Rejected',
+      createdBy: 'Akash Parmar',
+      createdOn: 'Apr 7, 2025',
+    },
+    {
+      packageTitle: 'Sample Package 3',
+      status: 'Completed',
+      createdBy: 'Suresh Lakum',
+      createdOn: 'Apr 22, 2025',
+    },
+    {
+      packageTitle: 'Sample Package 4',
+      status: 'Pending',
+      createdBy: 'Sandip Lakum',
+      createdOn: 'Apr 5, 2025',
+    },
+    {
+      packageTitle: 'Sample Package 5',
+      status: 'In Progress',
+      createdBy: 'Jiten Vaghela',
+      createdOn: 'Apr 10, 2025',
+    },
+  ];
+
+  showTableMenu() {
+    // debugger;
+    // document.getElementById('tableMenu')?.classList.toggle('show');
+    // debugger;
+    this.isTableMenu = !this.isTableMenu;
+    console.log('Clicked');
   }
 }

@@ -1,20 +1,22 @@
-.template-container {
+@use "../../../../assets/sass/variables" as *;
+
+.template-box {
   border: 1px dashed #3f3f46;
   border-radius: 10px;
-  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  .template-steps {
+  .box-steps {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    // position: relative;
+    width: 100%;
 
-    // .center-line {
-    //   position: absolute;
-    //   // color: #d9d9d9;
-    //   top: 5%;
-    //   left: 25%;
-    // }2
+    @include breakpoint(xl) {
+      width: 75%;
+    }
 
     .steps {
       width: 9rem;

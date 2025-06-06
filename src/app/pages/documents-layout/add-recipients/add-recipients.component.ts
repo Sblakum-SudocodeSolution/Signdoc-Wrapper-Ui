@@ -29,8 +29,6 @@ export class AddRecipientsComponent {
   private _router = inject(Router);
   isStepActive: boolean = false;
 
-  visible: boolean = false;
-
   constructor() {
     this.initFormGroup();
   }
@@ -75,7 +73,7 @@ export class AddRecipientsComponent {
   recipientSubmit() {
     if (this.recipientForm()?.invalid) {
       this.recipientForm()?.markAllAsTouched();
-      this.visible = true;
+      alert('Please fill the all required fields');
       return;
     }
 

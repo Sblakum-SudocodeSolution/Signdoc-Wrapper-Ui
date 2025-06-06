@@ -46,6 +46,7 @@ export class LoginComponent {
   }
 
   login() {
+    const Token: number = 12345678987654321;
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
@@ -55,8 +56,8 @@ export class LoginComponent {
     const password = this.loginFormControls['password'].value;
 
     if (email == 'admin@gamil.com' && password == '1234567890') {
+      localStorage.setItem('LoggedInUser', JSON.stringify(Token));
       this.router.navigate(['dashboard']);
-      console.log('admin LoggedIn success');
       this.loginForm.reset();
     } else {
       alert('Invalid userName and Password');

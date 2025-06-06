@@ -17,7 +17,7 @@ export class AddDocumentsComponent {
     this.router.navigateByUrl('documents/add-recipients');
   }
 
-  myFunction() {
+  showDropdownMenu() {
     document.getElementById('fileUploadMenu')?.classList.toggle('show');
   }
 }

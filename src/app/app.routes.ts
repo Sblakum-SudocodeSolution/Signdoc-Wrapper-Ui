@@ -22,7 +22,9 @@ export const routes: Routes = [
   {
     path: 'plans',
     loadComponent: () =>
-      import('./pages/plans&pricing/plans.component').then((c) => c.PlansComponent),
+      import('./pages/plans&pricing/plans.component').then(
+        (c) => c.PlansComponent
+      ),
   },
 
   {

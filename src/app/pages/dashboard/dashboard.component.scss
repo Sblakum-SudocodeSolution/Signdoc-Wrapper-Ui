@@ -1,4 +1,17 @@
 .dashboard-container {
+  .text-progress {
+    color: #3b82f6;
+  }
+  .text-complete {
+    color: #119c2b;
+  }
+  .text-reject {
+    color: #dd1818;
+  }
+  .text-pending {
+    color: #8b5cf6;
+  }
+
   .dashboard-title {
     font-size: 1.5rem;
   }
@@ -22,25 +35,55 @@
   }
 
   .dash-table-container {
-    position: relative;
-    display: inline-block;
+    .table-heading {
+      color: #84919a;
+    }
+
+    .table-data {
+      color: #252c32;
+    }
 
     .btn-dash-table {
       border: none;
+      background-color: var(--bg-white);
     }
 
-    .dash-table-popup {
-      // position: absolute;
-      background-color: lightgreen;
-      color: #71717a;
-      position: absolute;
+    .Package-detail-menu {
       display: none;
-      // right: 0;
-      // transform: translate(-50%, -50%);
-      z-index: 888;
+      position: absolute;
+      min-width: 13rem;
+      overflow: auto;
+      z-index: 1;
+      background-color: var(--text-white);
+      text-align: start;
+      border: 1px solid #f2f4f7;
+      border-radius: 10px;
     }
 
-    .show-dash-table-popup {
+    .tableMenu {
+      width: 13rem;
+      background-color: lightblue;
+      padding: 1rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      overflow: auto;
+      z-index: 22;
+      border: 1px solid grey;
+      border-radius: 10px;
+    }
+
+    .filter-box {
+      select {
+        &:focus-visible {
+          border: none !important;
+        }
+      }
+    }
+
+    .show {
       display: block;
     }
   }
