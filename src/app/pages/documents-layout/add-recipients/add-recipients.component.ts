@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccordionModule } from 'primeng/accordion';
-import { Dialog } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 
@@ -16,7 +15,6 @@ import { InputTextModule } from 'primeng/inputtext';
   imports: [
     AccordionModule,
     ReactiveFormsModule,
-    Dialog,
     ButtonModule,
     InputTextModule,
   ],
@@ -63,7 +61,6 @@ export class AddRecipientsComponent {
 
   toggleStepActive() {
     this.isStepActive = !this.isStepActive;
-    // const stepCount = document.;
   }
 
   backToDocument() {

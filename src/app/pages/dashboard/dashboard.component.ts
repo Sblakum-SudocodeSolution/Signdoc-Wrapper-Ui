@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { TableModule } from 'primeng/table';
-import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { Router } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 interface todos {
   id: number;
@@ -24,6 +25,8 @@ interface todos {
     IconField,
     InputTextModule,
     FormsModule,
+    MatButtonModule,
+    MatMenuModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
@@ -34,23 +37,9 @@ export class DashboardComponent {
   toggleTablePopup: boolean = false;
   isTableMenu: boolean = false;
 
-  private productService = inject(ProductService);
   private router = inject(Router);
 
-  ngOnInit() {
-    this.getProduct();
-  }
-
-  getProduct() {
-    this.productService.fetchProducts().subscribe({
-      next: (res: any) => {
-        this.todoList = res;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-  }
+  ngOnInit() {}
 
   createPackage() {
     this.router.navigateByUrl('documents');
@@ -90,9 +79,6 @@ export class DashboardComponent {
   ];
 
   showTableMenu() {
-    // debugger;
-    // document.getElementById('tableMenu')?.classList.toggle('show');
-    // debugger;
     this.isTableMenu = !this.isTableMenu;
     console.log('Clicked');
   }

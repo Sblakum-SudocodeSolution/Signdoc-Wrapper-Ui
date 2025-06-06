@@ -49,7 +49,7 @@
 
   <div class="row mt-5">
     <div class="col">
-      <form class="d-flex gap-4">
+      <form class="d-flex gap-5">
         <div class="search-box w-100">
           <p-iconfield class="search-bar">
             <p-inputicon styleClass="pi pi-search" />
@@ -65,7 +65,7 @@
           class="filter-box d-flex align-items-center px-3 rounded gap-3 border"
         >
           <select class="filter-select border-0 border-end">
-            <option value="" selected disabled>Filter</option>
+            <option value="" selected disabled>Status</option>
             <option value="1">By name</option>
             <option value="2">By Date</option>
             <option value="3">By status</option>
@@ -118,11 +118,29 @@
                 <td class="table-data">{{ item.createdOn }}</td>
                 <td>
                   <button
+                    class="border-0 bg-white"
+                    matButton
+                    [matMenuTriggerFor]="menu"
+                  >
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                  <mat-menu #menu="matMenu" class="shadow-none">
+                    <button mat-menu-item>View</button>
+                    <button mat-menu-item>Rename</button>
+                    <button mat-menu-item>Preview</button>
+                    <button mat-menu-item>Make Template</button>
+                    <button mat-menu-item>Share</button>
+                    <button mat-menu-item>Print</button>
+                    <button mat-menu-item>Download</button>
+                    <button mat-menu-item>Delete</button>
+
+                  </mat-menu>
+                  <!-- <button
                     class="btn-dash-table text-black"
                     (click)="showTableMenu()"
                   >
                     <i class="bi bi-three-dots"></i>
-                  </button>
+                  </button> -->
                 </td>
               </tr>
             </ng-template>

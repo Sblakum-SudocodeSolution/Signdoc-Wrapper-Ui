@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
+import { auth } from './services/auth.guard';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'login',
+  //   pathMatch: 'full',
+  // },
   {
     path: 'login',
     loadComponent: () =>
@@ -25,6 +26,7 @@ export const routes: Routes = [
       import('./pages/plans&pricing/plans.component').then(
         (c) => c.PlansComponent
       ),
+    canActivate: [auth],
   },
 
   {
@@ -33,22 +35,31 @@ export const routes: Routes = [
       import('./component/layout/layout.component').then(
         (c) => c.LayoutComponent
       ),
+    canActivate: [auth],
     children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
       {
         path: 'dashboard',
         loadComponent: () =>
           import('./pages/dashboard/dashboard.component').then(
             (c) => c.DashboardComponent
           ),
+        canActivate: [auth],
         title: 'Dashboard',
       },
       {
         path: 'documents',
         loadChildren: () => import('./pages/documents-layout/documents.routes'),
+        canActivate: [auth],
       },
       {
         path: 'template',
         loadChildren: () => import('./pages/template-layout/template-routes'),
+        canActivate: [auth],
       },
       {
         path: 'create-contact',
@@ -56,6 +67,7 @@ export const routes: Routes = [
           import('./pages/create-contact/create-contact.component').then(
             (c) => c.CreateContactComponent
           ),
+        canActivate: [auth],
       },
     ],
   },
@@ -66,5 +78,6 @@ export const routes: Routes = [
       import('../app/pages/page404/page404.component').then(
         (c) => c.Page404Component
       ),
+    canActivate: [auth],
   },
 ];
