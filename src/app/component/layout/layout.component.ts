@@ -24,7 +24,6 @@ import {
   styleUrl: './layout.component.scss',
 })
 export class LayoutComponent {
-
   isSidebarOpen: boolean = true;
   breakPointObserver = inject(BreakpointObserver);
 

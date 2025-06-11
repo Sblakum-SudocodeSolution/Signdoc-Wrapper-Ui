@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
-import { Router } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { LoginService } from '../../services/Login/login.service';
 
 interface todos {
   id: number;
@@ -34,15 +34,12 @@ interface todos {
 export class DashboardComponent {
   todoList: any[] = [];
   selectedTodo!: todos;
-  toggleTablePopup: boolean = false;
-  isTableMenu: boolean = false;
-
-  private router = inject(Router);
+  private _loginService = inject(LoginService);
 
   ngOnInit() {}
 
   createPackage() {
-    this.router.navigateByUrl('documents');
+    this._loginService.navigateByUrl('/documents');
   }
 
   products: any[] = [
@@ -77,9 +74,4 @@ export class DashboardComponent {
       createdOn: 'Apr 10, 2025',
     },
   ];
-
-  showTableMenu() {
-    this.isTableMenu = !this.isTableMenu;
-    console.log('Clicked');
-  }
 }

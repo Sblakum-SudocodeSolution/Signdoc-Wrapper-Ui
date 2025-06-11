@@ -93,7 +93,7 @@
                 <th class="table-heading">Package Title</th>
                 <th class="table-heading">Status</th>
                 <th class="table-heading">Created by</th>
-                <th class="table-heading">Created on</th>
+                <th class="table-heading" colspan="2">Created on</th>
               </tr>
             </ng-template>
 
@@ -133,33 +133,11 @@
                     <button mat-menu-item>Print</button>
                     <button mat-menu-item>Download</button>
                     <button mat-menu-item>Delete</button>
-
                   </mat-menu>
-                  <!-- <button
-                    class="btn-dash-table text-black"
-                    (click)="showTableMenu()"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button> -->
                 </td>
               </tr>
             </ng-template>
           </p-table>
-          <!-- <div id="packageDetailMenu" class="Package-detail-menu">
-            <ul>
-              <li>list-1</li>
-              <li>list-2</li>
-              <li>list-3</li>
-            </ul>
-          </div> -->
-
-          <div class="tableMenu" [class.show]="isTableMenu">
-            <ul>
-              <li>List-1</li>
-              <li>List-2</li>
-              <li>List-3</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>

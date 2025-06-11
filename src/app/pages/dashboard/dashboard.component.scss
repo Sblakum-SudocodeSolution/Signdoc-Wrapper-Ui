@@ -19,6 +19,7 @@
   .dashboard-card {
     border: 1px solid #e4e4e7;
     border-radius: 13px;
+    transition: all 0.4s;
 
     strong {
       font-size: 1.75rem;
@@ -31,7 +32,16 @@
 
     i {
       font-size: 26px;
+      transition: all 0.4s;
     }
+
+    &:hover {
+      border-color: var(--bg-violate);
+    }
+  }
+
+  .dashboard-card:hover i {
+    color: var(--bg-violate);
   }
 
   .dash-table-container {
@@ -43,38 +53,6 @@
       color: #252c32;
     }
 
-    .btn-dash-table {
-      border: none;
-      background-color: var(--bg-white);
-    }
-
-    .Package-detail-menu {
-      display: none;
-      position: absolute;
-      min-width: 13rem;
-      overflow: auto;
-      z-index: 1;
-      background-color: var(--text-white);
-      text-align: start;
-      border: 1px solid #f2f4f7;
-      border-radius: 10px;
-    }
-
-    .tableMenu {
-      width: 13rem;
-      background-color: lightblue;
-      padding: 1rem;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: none;
-      overflow: auto;
-      z-index: 22;
-      border: 1px solid grey;
-      border-radius: 10px;
-    }
-
     .filter-box {
       select {
         outline: none;
@@ -83,10 +61,6 @@
           outline: none !important;
         }
       }
-    }
-
-    .show {
-      display: block;
     }
   }
 }

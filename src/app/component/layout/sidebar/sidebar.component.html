@@ -1,5 +1,4 @@
-<!-- <div class="bg-white h-screen!"> -->
-<div id="sidebar" class="vh-100">
+<div id="sidebar" class="vh-100 p-3">
   <div class="sidebar-header">
     <img
       src="../../../../assets/images/sudo_dark_logo.png"
@@ -10,30 +9,32 @@
   </div>
 
   <div class="sidebar-body mt-4">
-    <mat-nav-list role="list">
+    <ul>
       @for (item of sidebarItem; track $index) { @if (item.title) {
-      <div class="sidebar-title my-3">{{ item.title }}</div>
+      <div class="sidebar-title my-2">{{ item.label }}</div>
       } @if (item.hr) {
       <hr />
       }
-      <mat-list-item class="nav-item mt-1" role="listitem">
-        <a
-          [routerLink]="item.link"
-          class="nav-link"
-          [routerLinkActive]="item.routerLinkActive"
-        >
-          <i [class]="item.icon"></i>
-          <span>{{ item.label }}</span>
-        </a>
-      </mat-list-item>
 
+      <li class="nav-item ms-2">
+        <a
+          routerLink="{{ item.link }}"
+          routerLinkActive="{{ item.routerLinkActive }}"
+          class="d-block"
+        >
+          <i [class]="item.icon" class="me-2"></i>
+          {{ item.label }}</a
+        >
+      </li>
       }
-      <mat-list-item class="nav-item mt-2" role="listitem">
-        <a class="nav-link d-flex justify-content-center" (click)="logOut()">
-          <i class="bi bi-box-arrow-left"></i>
-          <span>Logout</span>
-        </a>
-      </mat-list-item>
-    </mat-nav-list>
+
+      <li
+        class="btn-logout mb-4 d-flex align-items-center justify-content-center"
+        (click)="logOut()"
+      >
+        <i class="bi bi-box-arrow-left me-2"></i>
+        Logout
+      </li>
+    </ul>
   </div>
 </div>

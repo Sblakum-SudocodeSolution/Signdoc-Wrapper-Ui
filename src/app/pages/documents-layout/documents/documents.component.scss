@@ -1,9 +1,3 @@
-.document-label {
-  color: #3f3f46;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-}
-
 .document-box {
   border: 1px dashed #3f3f46;
   border-radius: 10px;
@@ -13,12 +7,9 @@
   .doc-step-title {
     color: #6e6e6e99;
     font-weight: 600;
-    text-transform: uppercase;
   }
 
   .box-steps {
-    flex-wrap: wrap;
-
     .steps-card {
       width: 8.813rem;
 
@@ -29,7 +20,6 @@
         border-radius: 10px;
         display: grid;
         place-content: center;
-        margin: auto;
       }
 
       .image-container2 {
@@ -38,7 +28,6 @@
       }
 
       .step-description {
-        text-transform: uppercase;
         letter-spacing: 1.8%;
 
         .title {
@@ -55,15 +44,6 @@
         }
       }
     }
-  }
-
-  .btn-upload {
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    background-color: var(--text-white);
-    border: 2px solid #a358ff;
   }
 
   .dropdown-popup {

@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LoginService } from '../../../services/Login/login.service';
 
 @Component({
   selector: 'app-documents',
@@ -12,12 +12,13 @@ import { CommonModule } from '@angular/common';
 })
 export class DocumentsComponent {
   visible: boolean = false;
-  private router = inject(Router);
   isPopupShow: boolean = false;
   isUrlShow: boolean = false;
 
+  private _loginService = inject(LoginService);
+
   redirectDocumentRoute() {
-    this.router.navigateByUrl('documents/add-documents');
+    this._loginService.navigateByUrl('/documents/add-documents');
   }
 
   toggleMenuPopup() {

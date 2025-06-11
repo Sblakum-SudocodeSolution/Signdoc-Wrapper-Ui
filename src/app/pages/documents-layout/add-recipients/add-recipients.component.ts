@@ -5,10 +5,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { LoginService } from '../../../services/Login/login.service';
 
 @Component({
   selector: 'app-add-recipients',
@@ -24,8 +24,8 @@ import { InputTextModule } from 'primeng/inputtext';
 export class AddRecipientsComponent {
   recipientForm = signal<FormGroup | null>(null);
   private _formBuilder = inject(FormBuilder);
-  private _router = inject(Router);
   isStepActive: boolean = false;
+  private _loginService = inject(LoginService);
 
   constructor() {
     this.initFormGroup();
@@ -64,7 +64,7 @@ export class AddRecipientsComponent {
   }
 
   backToDocument() {
-    this._router.navigateByUrl('/documents/add-documents');
+    this._loginService.navigateByUrl('/documents/add-documents');
   }
 
   recipientSubmit() {
@@ -76,6 +76,6 @@ export class AddRecipientsComponent {
 
     console.log(this.recipientForm()?.value);
     this.recipientForm()?.reset();
-    this._router.navigateByUrl('/dashboard');
+    this._loginService.navigateByUrl('/dashboard');
   }
 }

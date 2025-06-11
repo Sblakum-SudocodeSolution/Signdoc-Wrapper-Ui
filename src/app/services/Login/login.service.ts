@@ -11,6 +11,10 @@ export class LoginService {
 
   logout() {
     localStorage.removeItem('LoggedInUser');
-    this._router.navigateByUrl('/login');
+    this.navigateByUrl('/login');
+  }
+
+  navigateByUrl(url: string): void {
+    this._router.navigateByUrl(url);
   }
 }

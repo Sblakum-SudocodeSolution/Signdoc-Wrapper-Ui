@@ -11,14 +11,10 @@
     .form-box {
       .btn-google {
         margin: 2rem 0;
-        // display: flex;
-        // justify-content: center;
-        // gap: 0.5rem;
       }
 
       .create-acc-link {
         color: var(--text-violate);
-        font-weight: bold;
 
         &:hover {
           color: var(--bg-violate);
