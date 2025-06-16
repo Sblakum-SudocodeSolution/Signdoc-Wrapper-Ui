@@ -6,7 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { LoginService } from '../../services/Login/login.service';
+import { HttpService } from '../../services/http/http.service';
+import { Strings } from '../../enum/strings.enum';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
   loginForm!: FormGroup;
   submitted: boolean = false;
   private fb = inject(FormBuilder);
-  private _loginService = inject(LoginService);
+  private _httpService = inject(HttpService);
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -57,8 +58,8 @@ export class LoginComponent {
     const password = this.loginFormControls['password'].value;
 
     if (email == 'admin@gamil.com' && password == '1234567890') {
-      localStorage.setItem('LoggedInUser', JSON.stringify(Token));
-      this._loginService.navigateByUrl('/dashboard');
+      localStorage.setItem(Strings.LOGGED_IN_USER, JSON.stringify(Token));
+      this._httpService.navigateByUrl('/dashboard');
       this.loginForm.reset();
     } else {
       alert('Invalid userName and Password');

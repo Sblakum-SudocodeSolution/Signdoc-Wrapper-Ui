@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ToggleSwitch } from 'primeng/toggleswitch';
 import { FormsModule } from '@angular/forms';
-import { LoginService } from '../../services/Login/login.service';
+import { HttpService } from '../../services/http/http.service';
 
 @Component({
   selector: 'app-plans',
@@ -11,14 +11,14 @@ import { LoginService } from '../../services/Login/login.service';
 })
 export class PlansComponent {
   checked: boolean = false;
-  private _loginService = inject(LoginService);
+  private _httpService = inject(HttpService);
 
   ngOnInit() {
     this.checkIconsColor();
   }
 
   redirectToHome() {
-    this._loginService.navigateByUrl('/dashboard');
+    this._httpService.navigateByUrl('/dashboard');
   }
 
   checkIconsColor() {

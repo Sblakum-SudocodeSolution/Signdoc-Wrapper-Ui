@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { StepperModule } from 'primeng/stepper';
-import { LoginService } from '../../../services/Login/login.service';
+import { HttpService } from '../../../services/http/http.service';
 
 @Component({
   selector: 'app-add-documents',
@@ -11,10 +11,10 @@ import { LoginService } from '../../../services/Login/login.service';
   styleUrl: './add-documents.component.scss',
 })
 export class AddDocumentsComponent {
-  private _loginService = inject(LoginService);
+  private _httpService = inject(HttpService);
 
   redirectRecipientsRoute() {
-    this._loginService.navigateByUrl('/documents/add-recipients');
+    this._httpService.navigateByUrl('/documents/add-recipients');
   }
 
   showDropdownMenu() {

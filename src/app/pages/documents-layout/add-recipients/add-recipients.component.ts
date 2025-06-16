@@ -8,7 +8,7 @@ import {
 import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { LoginService } from '../../../services/Login/login.service';
+import { HttpService } from '../../../services/http/http.service';
 
 @Component({
   selector: 'app-add-recipients',
@@ -25,7 +25,7 @@ export class AddRecipientsComponent {
   recipientForm = signal<FormGroup | null>(null);
   private _formBuilder = inject(FormBuilder);
   isStepActive: boolean = false;
-  private _loginService = inject(LoginService);
+  private _httpService = inject(HttpService);
 
   constructor() {
     this.initFormGroup();
@@ -64,7 +64,7 @@ export class AddRecipientsComponent {
   }
 
   backToDocument() {
-    this._loginService.navigateByUrl('/documents/add-documents');
+    this._httpService.navigateByUrl('/documents/add-documents');
   }
 
   recipientSubmit() {
@@ -76,6 +76,6 @@ export class AddRecipientsComponent {
 
     console.log(this.recipientForm()?.value);
     this.recipientForm()?.reset();
-    this._loginService.navigateByUrl('/dashboard');
+    this._httpService.navigateByUrl('/dashboard');
   }
 }

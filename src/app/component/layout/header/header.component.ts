@@ -3,8 +3,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
-import { LoginService } from '../../../services/Login/login.service';
 import { RouterLink } from '@angular/router';
+import { HttpService } from '../../../services/http/http.service';
 
 @Component({
   selector: 'app-header',
@@ -20,13 +20,13 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
   @Output() sidebarToggle = new EventEmitter();
-  private _logoutService = inject(LoginService);
+  private _httpService = inject(HttpService);
 
   sidebarToggleBtn() {
     this.sidebarToggle.emit();
   }
 
   logOut() {
-    this._logoutService.logout();
+    this._httpService.logout();
   }
 }

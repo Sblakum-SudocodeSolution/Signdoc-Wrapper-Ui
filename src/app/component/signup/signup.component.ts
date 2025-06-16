@@ -15,10 +15,10 @@ import {
 })
 export class SignupComponent {
   signupForm!: FormGroup;
-  private fb = inject(FormBuilder);
+  private _fb = inject(FormBuilder);
 
   ngOnInit() {
-    this.signupForm = this.fb.group({
+    this.signupForm = this._fb.group({
       name: ['', Validators.compose([Validators.required])],
       email: [
         '',

@@ -5,7 +5,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
-import { LoginService } from '../../../services/Login/login.service';
+import { HttpService } from '../../../services/http/http.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -22,7 +22,7 @@ import { LoginService } from '../../../services/Login/login.service';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  private _logoutService = inject(LoginService);
+  private _httpService = inject(HttpService);
 
   sidebarItem: {
     label: string;
@@ -105,6 +105,6 @@ export class SidebarComponent {
   ];
 
   logOut() {
-    this._logoutService.logout();
+    this._httpService.logout();
   }
 }

@@ -7,7 +7,7 @@ import { InputIcon } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { LoginService } from '../../services/Login/login.service';
+import { HttpService } from '../../services/http/http.service';
 
 interface todos {
   id: number;
@@ -34,12 +34,12 @@ interface todos {
 export class DashboardComponent {
   todoList: any[] = [];
   selectedTodo!: todos;
-  private _loginService = inject(LoginService);
+  private _httpService = inject(HttpService);
 
   ngOnInit() {}
 
   createPackage() {
-    this._loginService.navigateByUrl('/documents');
+    this._httpService.navigateByUrl('/documents');
   }
 
   products: any[] = [

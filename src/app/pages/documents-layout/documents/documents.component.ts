@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
-import { LoginService } from '../../../services/Login/login.service';
+import { HttpService } from '../../../services/http/http.service';
 
 @Component({
   selector: 'app-documents',
@@ -15,10 +15,10 @@ export class DocumentsComponent {
   isPopupShow: boolean = false;
   isUrlShow: boolean = false;
 
-  private _loginService = inject(LoginService);
+  private _httpService = inject(HttpService);
 
   redirectDocumentRoute() {
-    this._loginService.navigateByUrl('/documents/add-documents');
+    this._httpService.navigateByUrl('/documents/add-documents');
   }
 
   toggleMenuPopup() {
